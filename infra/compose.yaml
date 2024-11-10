@@ -1,0 +1,12 @@
+services:
+  database:
+    container_name: "issue-tracker-container"
+    image: "postgres:17.0-alpine3.20"
+    env_file:
+      - ../.env.development
+    environment:
+      POSTGRES_USER: local_user
+      POSTGRES_PASSWORD: local_password
+      POSTGRES_DB: issue-tracker-localdb
+    ports:
+      - "5432:5432"
